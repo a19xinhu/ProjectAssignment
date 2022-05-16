@@ -6,7 +6,7 @@
     <TextView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/mountain_name"
+        android:id="@+id/data_name"
         android:text="Mountain Name"
         android:textSize="24sp"
         tools:ignore="MissingConstraints">
