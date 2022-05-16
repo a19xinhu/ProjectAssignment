@@ -6,11 +6,13 @@ public class Data {
     private String name;
     private String location;
     private int size;
+    private String category;
 
-    public Data(String name, String location, int size) {
+    public Data(String name, String location, int size,String category) {
         this.name = name;
         this.location = location;
         this.size = size;
+        this.category = category;
     }
 
     public String getName() {
@@ -37,10 +39,18 @@ public class Data {
         this.size = size;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     @NonNull
     @Override
     public String toString() {  //decide what data to show
-        return "Mountain "+name+" at "+location+" is "+size+" meters height";
+        return size+" cm "+name+" from "+location+" has "+ category+" vison.";
 
     }
 }
