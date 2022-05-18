@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener{
@@ -21,14 +22,18 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     private DataAdapter dataAdapter;
     private Button button;
 
+    private List<Data> data;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        data = new ArrayList<>();
+
         //recyclerview to show data
         recyclerView = findViewById(R.id.recycler_view);
-        dataAdapter = new DataAdapter();
+        dataAdapter = new DataAdapter(data);
         recyclerView.setAdapter(dataAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
@@ -41,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
             }
         });
 
-        //Json Task toget data
+        //Json Task to get data
         new JsonTask(this).execute(JSON_URL);   //json data from URL
     }
     {    }
@@ -51,10 +56,13 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         Gson gson = new Gson();
         Type type = new TypeToken<List<Data>>() {}.getType();
         List<Data> listOfData = gson.fromJson(json, type);
-        dataAdapter.setData(listOfData);
+
+        for (int i = 0; i < listOfData.size(); i++) {
+            data.add(listOfData.get(i));
+        }
+
         //used to make adapter to notice the data change
         dataAdapter.notifyDataSetChanged();
-
     }
 
     //start about activity

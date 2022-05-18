@@ -1,5 +1,6 @@
 package com.example.projectassignment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,13 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataAdapterViewHolder> {
-    private List<Data> data = new ArrayList<>();
+    private List<Data> data;
 
-    public void setData(List<Data> data) {
+    public DataAdapter(List<Data> data) {
         this.data = data;
     }
 
@@ -22,6 +22,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataAdapterVie
     @Override
     public DataAdapter.DataAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item,parent,false);
+        Log.d("testing", "onCreateViewHolder");
         return new DataAdapterViewHolder(view);
     }
 
