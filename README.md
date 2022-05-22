@@ -20,14 +20,14 @@ An example object from Data.java
 ```
 My app is about the video game Genshin Impact. It will show information about playable character in game. <br>
 name-there are different characters name. <br>
-location-there have different area in game. So location means which area the character if from.  <br>
+location-there have different area in game. So location means which area the character is from.  <br>
 category-there have vison in game which cam make character use element power.  <br>
 auxdata- Here is the information about character's background. Who are they in game. <br>
 size- Here add I about character's height, but that's not used in the end.
 
 ## Implementation Example
 
-##### Example 1  Main Activity
+#### Example 1  Main Activity
  
 Bild 3  App Main Screen <br>
 ![](app_mainscreen.png)
@@ -69,7 +69,7 @@ At bottom of screenshot is the button to start about activity.
 
 [When start coding about the recycler view, click to see](https://github.com/a19xinhu/ProjectAssignment/commit/3158417530bc65ed9644d994793c24354de9286a)
 
-##### Example 2  About Activity
+#### Example 2  About Activity
 
 Code 2 Code about Button at Main Activity
 ```
