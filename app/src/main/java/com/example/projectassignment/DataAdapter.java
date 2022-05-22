@@ -28,6 +28,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataAdapterVie
 
     @Override
     public void onBindViewHolder(@NonNull DataAdapter.DataAdapterViewHolder holder, int position) {
+        //use function toString() at Data.java
         holder.data_name.setText(data.get(position).toString());
     }
 

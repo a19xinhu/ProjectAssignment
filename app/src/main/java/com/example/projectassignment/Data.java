@@ -62,7 +62,6 @@ public class Data {
     @NonNull
     @Override
     public String toString() {  //decide what data to show
-        return name+" from "+location+" has "+ category+" vison is "+ auxdata +".";
-
+        return name+" from "+location+" who has "+ category+" vison is "+ auxdata +".";
     }
 }
